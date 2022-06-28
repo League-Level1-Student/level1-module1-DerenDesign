@@ -6,11 +6,12 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Rocket implements GameControlScene {
-
+	
 	double acceleration = 15;
 	double torque = 15;
 	double angle = 0;
 	int x, y, size;
+	
 	Rectangle collisionBox;
 	boolean turnLeft = false;
 	boolean turnRight = false;
@@ -18,7 +19,16 @@ public class Rocket implements GameControlScene {
 	boolean deccelerate = false;
 	boolean fire = false;
 	boolean restart = false;
-
+	
+	Rocket(){
+		x = AsteroidsGame.WIDTH / 2;
+		y = AsteroidsGame.HEIGHT / 2;
+		size = 10;
+		collisionBox = new Rectangle(x - size / 2, y - size / 2, size, size);
+		
+		
+		
+	}
 	/*
 	 * 2. A constructor does not have a return type and must be named the same as
 	 * the class i.e. public Rocket(){
