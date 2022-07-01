@@ -61,7 +61,10 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
      * Create your hippo objects here. The "left" input parameter indicates
      * which side the hippo is drawn.
      */
-    Hippo myHippoObject = new Hippo("left");
+    Hippo HenryHippo = new Hippo("left", "HenryHippo", Color.RED);
+    Hippo LizzieHippo = new Hippo("right", "LizzieHippo", Color.GREEN);
+    Hippo HomerHippo = new Hippo("up", "HomerHippo", Color.BLACK);
+    Hippo myHippoObject = new Hippo("down", "myHippoObject", Color.ORANGE);
 
     public HungryHungryHippos() {
         gameFrame.setScene(this);
@@ -96,7 +99,13 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
         /*
          * Draw all the hippos here
          */
+       
         myHippoObject.draw(g);
+        HenryHippo.draw(g);
+        LizzieHippo.draw(g);
+        HomerHippo.draw(g);
+        
+        
         
         if (startGame) {
             /*
@@ -110,26 +119,29 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
              * this for all of your hippos!
              */
             checkHippoEating(myHippoObject);
+            checkHippoEating(HenryHippo);
+            checkHippoEating(HomerHippo);
+            checkHippoEating(LizzieHippo);
+            
         }
     }
 
-    @Override
     public void keyPressed(KeyEvent event) {
         int keyCode = event.getKeyCode();
 
         /*
          * Bind a key to make your hippos eat
          */
-        if (keyCode == KeyEvent.VK_S) {
+        if (keyCode == KeyEvent.VK_1) {
             startGame = true;
-        } else if (keyCode == KeyEvent.VK_1) {
-            myHippoObject.eat();
         } else if (keyCode == KeyEvent.VK_2) {
-            
+            myHippoObject.eat();
         } else if (keyCode == KeyEvent.VK_3) {
-            
+        	 HenryHippo.eat();
         } else if (keyCode == KeyEvent.VK_4) {
-            
+        	LizzieHippo.eat();
+        } else if (keyCode == KeyEvent.VK_5) {
+        	 HomerHippo.eat();
         }
     }
     

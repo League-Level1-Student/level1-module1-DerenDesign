@@ -67,6 +67,7 @@ public class SolarSystem implements GameControlScene {
     Game gameFrame = new Game("Solar System");
     
     Planet earth = new Planet(12);
+    Planet sun = new Planet(139);
     
     public SolarSystem() {
         gameFrame.setScene(this);
@@ -117,7 +118,8 @@ public class SolarSystem implements GameControlScene {
         /*
          * Add planets here
          */
-        earth.draw(g, numDays);
+        //earth.draw(g, numDays);
+        //sun.draw(g, numDays);
     }
     
     @Override

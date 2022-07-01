@@ -11,12 +11,15 @@ public class Planet {
      */
     int x, y, width, height;
     int diameter;
+    String planetColor;
+    int disSun;
+    int orbPer;
     
     public Planet(int diameterPixels) {
         this.diameter = diameterPixels;
     }
 
-    public void draw(Graphics g, int numDays) {
+    public void draw(Graphics g, int numDays, String planetColor, int disSun, int orbPer) {
         /*
          * Local variables
          * Reassign or remove these after creating the correct member variables
