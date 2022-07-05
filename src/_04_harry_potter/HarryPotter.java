@@ -14,6 +14,7 @@ package _04_harry_potter;
 		* 5. cast a "stupefy" spell
 		*/
 
+
 public class HarryPotter {
 
 	private boolean cloakOn;
